@@ -29,7 +29,7 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(()=>{
     passwordRef.current?.select()
-    passwordRef.current?.setselectionRange(0.48)
+    passwordRef.current?.setSelectionRange(0,48)
     window.navigator.clipboard.writeText(password)
 
   }, [password])
@@ -39,7 +39,7 @@ function App() {
   return (
     <>
       <div className="w-full h-screen flex bg-black">
-        <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500'>
+        <div className='w-full h-56 max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500'>
           <h1 className='text-white text-4xl text-center font-sans px-1.5 py-2 my-4'>Password Generator</h1>
           <div className='flex shadow overflow-hidden rounded-lg mb-4'>
             <input 
@@ -50,7 +50,7 @@ function App() {
             readOnly
             ref={passwordRef}/>
             <button 
-            className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 transform active:animate-shrink'
+            className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'
             onClick={copyPasswordToClipboard}
             >Copy</button>
           </div>
